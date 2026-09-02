@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praveen Sinha's Tuitions</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap');
+*{box-sizing:border-box} body{margin:0;font-family:'Baloo 2',cursive;background:#eef7ff;color:#12345b}
+header{background:linear-gradient(135deg,#0757c9,#19a7ff);color:white;padding:28px 20px;text-align:center;border-bottom-left-radius:35px;border-bottom-right-radius:35px}
+h1{font-size:44px;margin:0 0 5px;text-shadow:2px 3px 0 rgba(0,0,0,.12)} header p{font-size:21px;margin:0}
+nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding:18px}
+nav a{background:white;color:#0757c9;padding:8px 18px;border-radius:25px;text-decoration:none;font-weight:700;box-shadow:0 4px 12px #b7d8f5}
+.hero{max-width:1000px;margin:20px auto;padding:35px 25px;text-align:center}
+.hero h2{font-size:38px;margin:5px}.hero p{font-size:21px}
+.btn{display:inline-block;background:#ffcf33;color:#163a66;padding:13px 25px;border-radius:30px;text-decoration:none;font-weight:800;box-shadow:0 5px 0 #d7a900}
+section{max-width:1000px;margin:25px auto;padding:20px}
+.title{text-align:center;font-size:34px;margin:10px 0 25px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:white;border-radius:28px;padding:22px;text-align:center;box-shadow:0 7px 20px #c7def3}
+.card h3{color:#0757c9;font-size:25px;margin:5px}.card p{font-size:18px}
+.chat{background:linear-gradient(135deg,#0757c9,#159ff0);color:white;border-radius:30px;padding:30px;box-shadow:0 8px 25px #b6d8f4}
+form{display:grid;gap:12px;max-width:650px;margin:auto}
+input,textarea,select{width:100%;padding:13px 16px;border:0;border-radius:18px;font:inherit;font-size:17px}
+textarea{min-height:100px;resize:vertical}
+button{border:0;background:#ffcf33;color:#173b65;padding:14px;border-radius:22px;font:inherit;font-weight:800;cursor:pointer}
+.note{text-align:center;font-size:14px;margin-top:12px}
+footer{text-align:center;padding:25px;background:#064aa8;color:white;margin-top:40px}
+@media(max-width:600px){h1{font-size:34px}.hero h2{font-size:30px}.title{font-size:28px}}
+</style>
+</head>
+<body>
+<header>
+<h1>Praveen Sinha's Tuitions</h1>
+<p>Maths made simple, fun & easy! ✨</p>
+</header>
+<nav>
+<a href="#home">Home</a><a href="#classes">Classes</a><a href="#chat">Chat with Teacher</a><a href="tel:+917717774180">📞 Call</a>
+</nav>
+<main id="home">
+<div class="hero">
+<h2>📐 Learn Maths. Build Confidence.</h2>
+<p>Personalised Maths tuition for students from <b>Class 6 to Class 12</b>.</p>
+<a class="btn" href="#chat">💬 Talk to Teacher</a>
+</div>
+<section id="classes">
+<h2 class="title">📚 Classes We Teach</h2>
+<div class="cards">
+<div class="card"><h3>Class 6–8</h3><p>Strong foundations, concepts, practice & problem solving.</p></div>
+<div class="card"><h3>Class 9–10</h3><p>School syllabus, exam preparation and confidence-building practice.</p></div>
+<div class="card"><h3>Class 11–12</h3><p>Advanced Maths, concepts, questions and exam-focused preparation.</p></div>
+</div>
+</section>
+<section id="chat">
+<div class="chat">
+<h2 class="title">💬 Chat With Your Teacher</h2>
+<p style="text-align:center;font-size:18px">Enter your details and send your message.</p>
+<form onsubmit="sendMessage(event)">
+<input id="name" required placeholder="Your full name">
+<select id="className" required>
+<option value="">Select your class</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option>
+</select>
+<input id="address" required placeholder="Your address">
+<input id="phone" required type="tel" placeholder="Your contact number">
+<textarea id="message" required placeholder="Write your message to the teacher..."></textarea>
+<button type="submit">📨 Send Message</button>
+</form>
+<p class="note">Your message will open WhatsApp with the teacher's number.</p>
+</div>
+</section>
+</main>
+<footer>
+<p>📞 +91 77177 74180</p>
+<p>© 2026 Praveen Sinha's Tuitions • Maths Classes 6–12</p>
+</footer>
+<script>
+function sendMessage(e){
+ e.preventDefault();
+ const n=document.getElementById('name').value, c=document.getElementById('className').value,
+ a=document.getElementById('address').value, p=document.getElementById('phone').value,
+ m=document.getElementById('message').value;
+ const text=`Hello Praveen Sir!%0A%0AName: ${encodeURIComponent(n)}%0AClass: ${encodeURIComponent(c)}%0AAddress: ${encodeURIComponent(a)}%0AContact: ${encodeURIComponent(p)}%0A%0AMessage: ${encodeURIComponent(m)}`;
+ window.open(`https://wa.me/917717774180?text=${text}`,'_blank');
+}
+</script>
+</body>
+</html>
